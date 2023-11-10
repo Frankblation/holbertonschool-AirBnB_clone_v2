@@ -3,7 +3,7 @@
 Simple Flask application returning Hello HBNB!
 """
 
-from flask import Flask
+from flask import Flask, escape, request
 
 # Create a Flask web application instance
 app = Flask(__name__)
@@ -34,7 +34,7 @@ def hi_hbnb():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def display_c_text():
+def displa_c_text(text):
     """
     Route function for the '/c/<text>' URL.
     Returns: 'C'
