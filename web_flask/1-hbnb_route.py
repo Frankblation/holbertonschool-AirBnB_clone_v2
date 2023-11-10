@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 # Define a route for the root URL ('/')
 
+
 @app.route('/', strict_slashes=False)
 def hi_there():
     """
@@ -20,6 +21,7 @@ def hi_there():
 
 # Define a route for '/hbnb'
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hi_hbnb():
     """
@@ -28,8 +30,8 @@ def hi_hbnb():
     """
     return 'HBNB'
 
-
 # Run the application if the script is executed directly
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
