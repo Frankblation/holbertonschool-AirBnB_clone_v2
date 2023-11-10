@@ -34,7 +34,7 @@ def hi_hbnb():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def show_c_text():
+def display_c_text():
     """
     Route function for the '/c/<text>' URL.
     Returns: 'C'
