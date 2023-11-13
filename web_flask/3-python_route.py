@@ -4,6 +4,7 @@ Simple Flask application returning Hello HBNB!
 """
 
 from flask import Flask, escape, request
+import html
 
 # Create a Flask web application instance
 app = Flask(__name__)
