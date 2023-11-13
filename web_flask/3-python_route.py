@@ -3,7 +3,7 @@
 Simple Flask application returning Hello HBNB!
 """
 
-from flask import Flask, escape, request
+from flask import Flask, request
 import html
 
 # Create a Flask web application instance
@@ -40,7 +40,7 @@ def display_c_text(text):
     Route function for the '/c/<text>' URL.
     Returns: 'C'
     """
-    return 'C {}'.format(escape(text.replace('_', ' ')))
+    return 'C {}'.format(html.escape(text.replace('_', ' ')))
 
 @app.route('/python/<text>', strict_slashes=False)
 def display_python(text="is cool"):
@@ -48,11 +48,11 @@ def display_python(text="is cool"):
     Route function for the '/python/<text>' URL.
     Returns: 'Python ' followed by the value of the 'text' variable.
     """
-    formatted_text = escape(text.replace('_', ' '))
+    formatted_text = html.escape(text.replace('_', ' '))
     return 'Python {}'.format(formatted_text)
 
 # Run the application if the script is executed directly
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)
