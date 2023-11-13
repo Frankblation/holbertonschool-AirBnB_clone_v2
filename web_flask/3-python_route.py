@@ -3,8 +3,7 @@
 Simple Flask application returning Hello HBNB!
 """
 
-from flask import Flask, request
-import html
+from flask import Flask
 
 # Create a Flask web application instance
 app = Flask(__name__)
@@ -31,6 +30,12 @@ def hi_hbnb():
     """
     return 'HBNB'
 
+# Replaces underscore with space
+
+
+def replace_underscores(text):
+    return text.replace('_', ' ')
+
 # Define a route for /c/<tex>
 
 
@@ -40,16 +45,19 @@ def display_c_text(text):
     Route function for the '/c/<text>' URL.
     Returns: 'C'
     """
-    return 'C {}'.format(html.escape(text.replace('_', ' ')))
+    return 'C {}'.format(replace_underscores(text))
+
+# Display's Python Text.
+
 
 @app.route('/python/<text>', strict_slashes=False)
-def display_python(text="is cool"):
+def display_python_text(text="is cool"):
     """
     Route function for the '/python/<text>' URL.
     Returns: 'Python ' followed by the value of the 'text' variable.
     """
-    formatted_text = html.escape(text.replace('_', ' '))
-    return 'Python {}'.format(formatted_text)
+    return 'Python {}'.format(replace_underscores(text))
+
 
 # Run the application if the script is executed directly
 
