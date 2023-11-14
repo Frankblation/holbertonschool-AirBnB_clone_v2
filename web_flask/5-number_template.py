@@ -70,7 +70,7 @@ def n_is_number(n):
 
 # Check if n is an integer
 
-
+@app.route('/number_template/', strict_slashes=False)
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def render_number_template(n):
     if isinstance(n, int):
