@@ -50,6 +50,7 @@ def display_c_text(text):
 # Display's Python Text.
 
 
+@app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def display_python_text(text="is cool"):
     """
