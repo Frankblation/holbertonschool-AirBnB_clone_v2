@@ -70,12 +70,13 @@ def n_is_number(n):
 
 # Check if n is an integer
 
+
 @app.route('/number_template/', strict_slashes=False)
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def render_number_template(n):
     if isinstance(n, int):
         # Render an HTML page with the number in the H1 tag
-        return render_template('number_template.html', number=n)
+        return render_template('5-number.html', number=n)
     else:
         # If n is not an integer, abort the request with a 404 Not Found
         abort(404)
