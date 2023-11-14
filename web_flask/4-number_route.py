@@ -59,7 +59,8 @@ def display_python_text(text="is cool"):
     """
     return 'Python {}'.format(replace_underscores(text))
 
-# Roudt
+# Check if the value of n is a digit (numeric)
+
 
 @app.route('/number/<n>', strict_slashes=False)
 def n_is_number(n):
