@@ -79,14 +79,23 @@ def render_number_template(n):
 
 
 @app.route('/number_odd_or_even/<n>', strict_slashes=False)
-def display_odd_even(n):
-
-    if n % 2 == 0:
-        desc = 'even'
-    else:
-        desc = 'odd'
-    return render_template('6-number_odd_or_even.html', n=n, desc=desc)
-
+def n_number_desc(n):
+    if n.isdigit():
+        if int(n) % 2 == 0:
+            desc = 'even'
+            return render_template(
+                '6-number_odd_or_even.html',
+                n=n,
+                desc=desc   
+            )
+        else:
+            parity = 'odd'
+            return render_template(
+                '6-number_odd_or_even.html',
+                n=n,
+                desc=desc
+            )
+    abort(404)
 # Run the application if the script is executed directly
 
 
