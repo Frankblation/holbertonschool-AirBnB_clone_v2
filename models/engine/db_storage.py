@@ -71,3 +71,6 @@ class DBStorage:
         Session = scoped_session(sess_factory)
         self.__session = Session
 
+    def close(self):
+        """calls reload for json"""
+        self.__session.remove()
