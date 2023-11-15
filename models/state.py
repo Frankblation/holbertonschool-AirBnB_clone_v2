@@ -23,6 +23,6 @@ class State(BaseModel, Base):
             new_list = []
             current_list = models.storage.all(City).values()
             for item in current_list:
-                item.state_id == self.id:
-                    new_list.append(item)
+                item.state_id == self.id
+                new_list.append(item)
             return new_list
