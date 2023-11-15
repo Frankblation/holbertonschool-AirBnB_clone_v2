@@ -77,6 +77,7 @@ def render_number_template(n):
         return render_template('5-number.html', n=n)
     abort(404)
 
+#  Is it odd or even
 
 @app.route('/number_odd_or_even/<n>', strict_slashes=False)
 def n_number_desc(n):
@@ -89,7 +90,7 @@ def n_number_desc(n):
                 desc=desc
             )
         else:
-            parity = 'odd'
+            desc = 'odd'
             return render_template(
                 '6-number_odd_or_even.html',
                 n=n,
