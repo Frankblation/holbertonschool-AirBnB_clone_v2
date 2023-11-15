@@ -79,6 +79,7 @@ def render_number_template(n):
 
 #  Is it odd or even
 
+
 @app.route('/number_odd_or_even/<n>', strict_slashes=False)
 def n_number_desc(n):
     if n.isdigit():
